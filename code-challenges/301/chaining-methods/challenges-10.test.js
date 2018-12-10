@@ -16,7 +16,7 @@ const count = (target, input) => {
     array.map(element => {
       if (element === target) {
         counter++;
-      } 
+      }
     })
   });
   return counter;
@@ -26,21 +26,21 @@ const count = (target, input) => {
 
 
 
-  // finalarr = [];
+// finalarr = [];
 
-  // for (let i = 0; i <= input.length - 1; i++) {
-  //   let line = [];
-  //   for (let j = 0; j <= input[i].length - 1; i++) {
-  //     line.push(input[i][j]);
-  //     return line;
-  //   }
-  //   for (var a = 0; a <= line.length; a++) {
-  //     if (target === line[a]) {
-  //       finalarr.push(line[a]);
-  //     }
-  //   }
+// for (let i = 0; i <= input.length - 1; i++) {
+//   let line = [];
+//   for (let j = 0; j <= input[i].length - 1; i++) {
+//     line.push(input[i][j]);
+//     return line;
+//   }
+//   for (var a = 0; a <= line.length; a++) {
+//     if (target === line[a]) {
+//       finalarr.push(line[a]);
+//     }
+//   }
 
-  //   return finalarr.length;
+//   return finalarr.length;
 // };
 
 /* ------------------------------------------------------------------------------------------------
@@ -51,7 +51,18 @@ For example, [[1, 2, 3, 4, 5], [6, 7, 2, 4, 5, 7], [9, 2, 3, 6,]] returns 66.
 ------------------------------------------------------------------------------------------------ */
 
 const totalSum = (input) => {
-  // Solution code here...
+
+  let sum = 0;
+
+  input.map(array => {
+
+    sum += array.reduce((accumulator, element) => {
+      accumulator += element;
+      return accumulator;
+    }, 0)
+  })
+
+  return sum;
 };
 
 /* ------------------------------------------------------------------------------------------------
